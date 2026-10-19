@@ -2,9 +2,9 @@
 
 [![CI](https://github.com/horacioparisotto/incident-remediation-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/horacioparisotto/incident-remediation-agent/actions/workflows/ci.yml)
 
-Patterns from an autonomous remediation agent I designed with the CTO of a **confidential US SaaS platform** and shipped to production. It turns a reported incident into finished, assigned follow-up work, with no human writing a word of it. Every action runs under the identity of whoever triggered it, nothing is ever left half-created, and when it can't produce a safe result it says so instead of inventing one.
+Patterns from the remediation agent I designed with the CTO of **[StackFactor](https://stackfactor.ai/shield)**, a US platform for SDLC compliance, and shipped to production. When a SHIELD deployment gate blocks a non-compliant release, the agent turns the incident into a finished, assigned EXCEED training plan for the people involved, with no human writing a word of it. Every action runs under the identity of whoever triggered it, nothing is ever left half-created, and when it can't produce a safe result it says so instead of inventing one.
 
-> **Rewritten from scratch to protect client code and the client's identity.** This is not the production source: names, schemas and infrastructure are replaced. The domain code depends on small ports; [`src/mongo.ts`](src/mongo.ts) implements them on MongoDB, and the tests use in-memory implementations with the same contracts. The MCP tools are tested end to end with the official MCP SDK client.
+> **Rewritten from scratch to protect client code.** This is not the production source: names, schemas and infrastructure are replaced. The domain code depends on small ports; [`src/mongo.ts`](src/mongo.ts) implements them on MongoDB, and the tests use in-memory implementations with the same contracts. The MCP tools are tested end to end with the official MCP SDK client.
 
 **Guarantees:** 0 standing credentials · 0 direct database access · 0 duplicate runs · same-day remediation.
 Full case study: [horacioparisotto.com](https://www.horacioparisotto.com/)
